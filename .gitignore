@@ -1,0 +1,5 @@
+privypass-hash-signing-se
+.idea
+.DS_Store
+config/app.yaml
+vendor

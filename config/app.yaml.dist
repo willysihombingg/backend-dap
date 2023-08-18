@@ -1,0 +1,67 @@
+app:
+  name: "${APP_NAME}"
+  port: "${APP_PORT}"
+  timezone: "${APP_TIMEZONE}"
+  debug: "${APP_DEBUG}"
+  env: "${APP.ENV}" # dev | stg | prod
+  read_timeout_second: "${READ_TIMEOUT_SECOND}"
+  write_timeout_second: "${WRITE_TIMEOUT_SECOND}"
+  key: "${APP_KEY}"
+  default_lang: "${APP_DEFAULT_LANG}"
+logger:
+  name: "${LOGGER_NAME}" # service name
+  level: "${LOGGER_LEVEL}" # trace | debug | info | warn | error | fatal | panic
+
+apm:
+  address: "${APM_ADDRESS}"
+  enable: false
+  name: DAPapp
+
+redis:
+  host: localhost:6379
+  db: 0 # 0
+  password: wXU7z2HQtBP6mWjHbPsfK96rmnqweawg
+  read_timeout_second: 1 # 1  second
+  write_timeout_second: 1 # 1  second
+  pool_size: 100 # 100
+  pool_timeout_second: 100 # 100
+  min_idle_conn: 10 # 10
+  idle_timeout_second: 240 # 240
+  route_by_latency: true # true
+  idle_frequency_check: 1 # 1
+  read_only: false
+  route_randomly: false
+  max_redirect: 3 # set 3 for default redis
+  cluster_mode: false
+  tls_enable: false
+  insecure_skip_verify: true # if tls_enable == true, this config use for tls insecure_skip_verify true or false
+
+db_write:
+  host: localhost
+  port: 3306
+  name: DAPapp # database name
+  user: root # database user
+  pass:  # database password
+  max_open: 50
+  max_idle: 25
+  timeout_second: 10
+  life_time_ms: 30000
+  charset: utf8
+
+db_read:
+  host: localhost
+  port: 3306
+  name: DAPapp # database name
+  user: root # database user
+  pass:  # database password
+  max_open: 50
+  max_idle: 25
+  timeout_second: 10
+  life_time_ms: 30000
+  charset: utf8
+
+depedency:
+  supabase:
+    base_url: "${BASE_URL}"
+    timeout: "${TIMEOUT}"
+    token : "${TOKEN}"
